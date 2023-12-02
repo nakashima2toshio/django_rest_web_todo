@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DjangoModelDependency</ID>
+  <OriginalElement>#drf_api</OriginalElement>
+  <nodes>
+    <node x="1550.1592465753426" y="1167.0">sns_app.models.Profile</node>
+    <node x="-259.9999999999998" y="103.0">ec_app.models.Category</node>
+    <node x="1629.7705479452056" y="1394.0">sns_app.models.Post</node>
+    <node x="471.40924657534265" y="51.0">ec_app.models.Customer</node>
+    <node x="1694.0205479452056" y="1645.0">sns_app.models.Like</node>
+    <node x="185.90924657534265" y="1180.0">sns_app.models.Follow</node>
+    <node x="332.65924657534265" y="356.0">ec_app.models.Order</node>
+    <node x="1206.2705479452056" y="1619.0">sns_app.models.Comment</node>
+    <node x="588.6592465753426" y="356.0">ec_app.models.CustomerProfile</node>
+    <node x="568.6592465753426" y="-152.0">django.db.models.utils.AltersData</node>
+    <node x="1296.6592465753426" y="583.0">django.contrib.auth.models.Group</node>
+    <node x="28.000000000000227" y="77.0">ec_app.models.Product</node>
+    <node x="1021.3356164383563" y="330.0">django.contrib.auth.models.Permission</node>
+    <node x="1144.7705479452056" y="810.0">api.models.CustomUser</node>
+    <node x="841.6592465753426" y="77.0">django.contrib.contenttypes.models.ContentType</node>
+    <node x="-161.09075342465735" y="369.0">ec_app.models.ProductCategory</node>
+    <node x="599.1592465753426" y="-70.0">django.db.models.base.Model</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="django.contrib.auth.models.Permission" target="django.contrib.contenttypes.models.ContentType" relationship="ForeignKey">
+      <point x="0.0" y="-99.5" />
+      <point x="1233.8356164383563" y="308.0" />
+      <point x="1101.1592465753426" y="308.0" />
+      <point x="0.0" y="86.5" />
+    </edge>
+    <edge source="sns_app.models.Follow" target="api.models.CustomUser" relationship="ForeignKey">
+      <point x="0.0" y="-73.5" />
+      <point x="314.40924657534265" y="1145.0" />
+      <point x="1339.7705479452056" y="1145.0" />
+      <point x="0.0" y="151.5" />
+    </edge>
+    <edge source="sns_app.models.Comment" target="sns_app.models.Post" relationship="ForeignKey">
+      <point x="0.0" y="-99.5" />
+      <point x="1339.7705479452056" y="1598.0" />
+      <point x="1747.7705479452056" y="1598.0" />
+      <point x="0.0" y="86.5" />
+    </edge>
+    <edge source="sns_app.models.Post" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-86.5" />
+      <point x="1747.7705479452056" y="1367.0" />
+      <point x="1827.6592465753429" y="1367.0" />
+      <point x="1827.6592465753429" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="django.contrib.auth.models.Group" target="django.contrib.auth.models.Permission" relationship="ManyToMany">
+      <point x="0.0" y="-86.5" />
+      <point x="1482.6592465753426" y="556.0" />
+      <point x="1233.8356164383563" y="556.0" />
+      <point x="0.0" y="99.5" />
+    </edge>
+    <edge source="sns_app.models.Follow" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-73.5" />
+      <point x="314.40924657534265" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="sns_app.models.Profile" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-86.5" />
+      <point x="1683.6592465753426" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="ec_app.models.ProductCategory" target="ec_app.models.Product" relationship="ForeignKey">
+      <point x="0.0" y="-60.5" />
+      <point x="9.40924657534265" y="308.0" />
+      <point x="160.00000000000023" y="308.0" />
+      <point x="0.0" y="86.5" />
+    </edge>
+    <edge source="django.contrib.contenttypes.models.ContentType" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-86.5" />
+      <point x="1101.1592465753426" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="django.contrib.auth.models.Permission" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-99.5" />
+      <point x="1233.8356164383563" y="308.0" />
+      <point x="1371.1592465753426" y="308.0" />
+      <point x="1371.1592465753426" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="api.models.CustomUser" target="django.contrib.auth.models.Group" relationship="ManyToMany">
+      <point x="0.0" y="-151.5" />
+      <point x="1339.7705479452056" y="783.0" />
+      <point x="1482.6592465753426" y="783.0" />
+      <point x="0.0" y="86.5" />
+    </edge>
+    <edge source="sns_app.models.Like" target="sns_app.models.Post" relationship="ForeignKey">
+      <point x="0.0" y="-73.5" />
+      <point x="1812.0205479452056" y="1588.0" />
+      <point x="1747.7705479452056" y="1588.0" />
+      <point x="0.0" y="86.5" />
+    </edge>
+    <edge source="sns_app.models.Profile" target="api.models.CustomUser" relationship="OneToOne">
+      <point x="0.0" y="-86.5" />
+      <point x="1683.6592465753426" y="1135.0" />
+      <point x="1339.7705479452056" y="1135.0" />
+      <point x="0.0" y="151.5" />
+    </edge>
+    <edge source="ec_app.models.ProductCategory" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-60.5" />
+      <point x="9.40924657534265" y="308.0" />
+      <point x="17.500000000000227" y="308.0" />
+      <point x="17.500000000000227" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="django.contrib.auth.models.Group" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-86.5" />
+      <point x="1482.6592465753426" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="ec_app.models.Order" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-73.5" />
+      <point x="450.65924657534265" y="298.0" />
+      <point x="378.65924657534265" y="298.0" />
+      <point x="378.65924657534265" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="sns_app.models.Post" target="sns_app.models.Profile" relationship="ForeignKey">
+      <point x="0.0" y="-86.5" />
+      <point x="1747.7705479452056" y="1367.0" />
+      <point x="1683.6592465753426" y="1367.0" />
+      <point x="0.0" y="86.5" />
+    </edge>
+    <edge source="ec_app.models.Order" target="ec_app.models.Customer" relationship="ForeignKey">
+      <point x="0.0" y="-73.5" />
+      <point x="450.65924657534265" y="308.0" />
+      <point x="604.9092465753426" y="308.0" />
+      <point x="0.0" y="112.5" />
+    </edge>
+    <edge source="ec_app.models.CustomerProfile" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-73.5" />
+      <point x="759.1592465753426" y="308.0" />
+      <point x="831.1592465753426" y="308.0" />
+      <point x="831.1592465753426" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="ec_app.models.CustomerProfile" target="ec_app.models.Customer" relationship="OneToOne">
+      <point x="0.0" y="-73.5" />
+      <point x="759.1592465753426" y="298.0" />
+      <point x="604.9092465753426" y="298.0" />
+      <point x="0.0" y="112.5" />
+    </edge>
+    <edge source="sns_app.models.Comment" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-99.5" />
+      <point x="1339.7705479452056" y="1588.0" />
+      <point x="-289.0" y="1588.0" />
+      <point x="-288.9999999999998" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="api.models.CustomUser" target="django.contrib.auth.models.Permission" relationship="ManyToMany">
+      <point x="0.0" y="-151.5" />
+      <point x="1339.7705479452056" y="783.0" />
+      <point x="1233.8356164383563" y="783.0" />
+      <point x="0.0" y="99.5" />
+    </edge>
+    <edge source="ec_app.models.ProductCategory" target="ec_app.models.Category" relationship="ForeignKey">
+      <point x="0.0" y="-60.5" />
+      <point x="9.40924657534265" y="308.0" />
+      <point x="-126.49999999999977" y="308.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="ec_app.models.Customer" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-112.5" />
+      <point x="604.9092465753426" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="sns_app.models.Comment" target="api.models.CustomUser" relationship="ForeignKey">
+      <point x="0.0" y="-99.5" />
+      <point x="0.0" y="151.5" />
+    </edge>
+    <edge source="ec_app.models.Category" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-60.5" />
+      <point x="-126.49999999999977" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="ec_app.models.Product" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-86.5" />
+      <point x="160.00000000000023" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="sns_app.models.Like" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-73.5" />
+      <point x="1812.0205479452056" y="1598.0" />
+      <point x="1884.0205479452056" y="1598.0" />
+      <point x="1884.0205479452056" y="25.0" />
+      <point x="759.1592465753426" y="25.0" />
+      <point x="0.0" y="34.5" />
+    </edge>
+    <edge source="django.db.models.base.Model" target="django.db.models.utils.AltersData" relationship="OneToOne">
+      <point x="0.0" y="-34.5" />
+      <point x="0.0" y="16.0" />
+    </edge>
+  </edges>
+  <settings layout="階層型" zoom="0.5763190954773869" showDependencies="false" x="567.9722070844687" y="474.80000000000007" />
+  <SelectedNodes />
+  <Categories>
+    <Category>フィールド</Category>
+  </Categories>
+</Diagram>
+

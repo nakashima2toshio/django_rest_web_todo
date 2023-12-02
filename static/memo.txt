@@ -1,0 +1,26 @@
+【データベース作成権限をDjangoユーザーへ付加する】
+解決策は、
+
+ユーザーへデータベースの作成権限を付加すること！
+
+順を追って方法を説明します
+
+１）メインユーザーとしてデータベースへアクセスします
+
+$ psql -U postgres -d postgres
+２）Djangoで使用しているユーザーに権限を付加する
+
+ALTER ROLE <Djangoユーザー> CREATEDB;
+※<Djangoユーザー>の箇所をDjagnoで使用しているユーザー名へ変更します
+
+例えば、「djangouser」というユーザー名の場合、
+
+ALTER ROLE djangouser CREATEDB;
+となります
+
+３）データベースのリスタート
+
+こちらはなくとも大丈夫かもしれませんが、念のためデータベースをリスタートしておきましょう（OSがubuntuの場合）
+
+$ service postgresql restart
+以上です！
