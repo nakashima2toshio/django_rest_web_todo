@@ -23,9 +23,10 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
     'django_filters',
-
     'drf_yasg',
     'django_extensions',
+    'debug_toolbar',
+
     'accounts.apps.AccountsConfig',
     'api.apps.ApiConfig',
     'todo_task.apps.TodoTaskConfig',
@@ -41,6 +42,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'debug_toolbar.middleware.DebugToolbarMiddleware',  # debug_toolbar
 ]
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
@@ -61,12 +64,57 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=3),
     'ROTATE_REFRESH_TOKENS': True,
     'UPDATE_LAST_LOGIN': True,
-    'AUTH_HEADER_TYPES': ('JWT', ),
-    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken', )
+    'AUTH_HEADER_TYPES': ('JWT',),
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',)
 }
 
-
 ROOT_URLCONF = 'django_rest_web_todo.urls'
+
+# ------------------------------------------------------------
+DJOSER = {
+    # メールアドレスでログイン
+    'LOGIN_FIELD': 'email',
+    # アカウント本登録メール
+    'SEND_ACTIVATION_EMAIL': True,
+    # アカウント本登録完了メール
+    'SEND_CONFIRMATION_EMAIL': True,
+    # メールアドレス変更完了メール
+    'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
+    # パスワード変更完了メール
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
+    # アカウント登録時に確認用パスワード必須
+    'USER_CREATE_PASSWORD_RETYPE': True,
+    # メールアドレス変更時に確認用メールアドレス必須
+    'SET_USERNAME_RETYPE': True,
+    # パスワード変更時に確認用パスワード必須
+    'SET_PASSWORD_RETYPE': True,
+    # アカウント本登録用URL
+    'ACTIVATION_URL': 'api/auth/activate/{uid}/{token}',
+    # メールアドレスリセット完了用URL
+    'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
+    # パスワードリセット完了用URL
+    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    # カスタムユーザー用シリアライザー
+    'SERIALIZERS': {
+        'user_create': 'accounts.serializers.UserSerializer',
+        'user': 'accounts.serializers.UserSerializer',
+        'current_user': 'accounts.serializers.UserSerializer',
+    },
+    'EMAIL': {
+        # アカウント本登録
+        'activation': 'accounts.email.ActivationEmail',
+        # アカウント本登録完了
+        'confirmation': 'accounts.email.ConfirmationEmail',
+        # パスワードリセット
+        'password_reset': 'accounts.email.PasswordResetEmail',
+        # パスワードリセット完了
+        'password_changed_confirmation': 'accounts.email.PasswordChangedConfirmationEmail',
+        # メールアドレスリセット
+        'username_reset': 'accounts.email.UsernameResetEmail',
+        # メールアドレスリセット完了
+        'username_changed_confirmation': 'accounts.email.UsernameChangedConfirmationEmail',
+    },
+}
 
 TEMPLATES = [
     {
@@ -130,18 +178,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
 # Internationalization
-# https://docs.djangoproject.com/en/4.0/topics/i18n/
-
-# LANGUAGE_CODE = 'en-us'
-# TIME_ZONE = 'UTC'
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 USE_I18N = True
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -152,14 +193,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'api.CustomUser'
-
+# AUTH_USER_MODEL = 'api.CustomUser'
+AUTH_USER_MODEL = 'accounts.UserAccount'
 
 # ローカルコンソール確認用
 if DEBUG:
@@ -174,3 +214,64 @@ else:
     EMAIL_USE_TLS = True
     DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'xxx@gmail.com')
 
+# ロギング設定
+LOGGING = {
+    'version': 1,  # 1固定
+    'disable_existing_loggers': False,
+    # フォーマッタの設定
+    'formatters': {
+        'dev': {
+            'format': '\t'.join([
+                '%(asctime)s',
+                '[%(levelname)s]',
+                '%(pathname)s(Line:%(lineno)d)',
+                '%(message)s'
+            ])
+        },
+        # 詳細ログの書式
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    # ハンドラの設定
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'dev'
+        },
+        # ファイル出力用のハンドラ
+        'file': {
+            'level': 'INFO',
+            #  'class': 'logging.FileHandler',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),
+            'formatter': 'verbose',
+            'when': 'D',  # 単位 Dは日
+            'interval': 1,  # 何日おきか指定
+            'backupCount': 7,  # バックアップ世代数
+        },
+    },
+    # ロガーの設定
+    'loggers': {
+        # Djangoが利用するロガー
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        # accountsアプリケーションが利用するロガー
+        'accounts': {
+            'handlers': ['file'],
+            'level': 'INFO',
+        },
+        '': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+    },
+}
+# 追加
+# DEBUG_TOOLBAR_CONFIG = {
+#     "SHOW_TOOLBAR_CALLBACK": lambda request: True,
+# }

@@ -4,7 +4,7 @@
 from django.urls import path, include
 from .views import UserList, ActivateAccount, UserCreate
 
-# app_name = 'accounts'
+app_name = 'accounts'
 urlpatterns = [
     path('users/', UserList.as_view(), name='account_signup'),
     path('users/create/', UserCreate.as_view(), name='account_create'),  # 新しいエンドポイント
@@ -12,26 +12,6 @@ urlpatterns = [
 ]
 
 """
-| 機能                  | URL                                                   |
-|-----------------------|-------------------------------------------------------|
-| 1. アカウント仮登録   | http://localhost:8000/api/auth/users/                 |
-|   - tokenの取得       | http://localhost:8000/api/auth/jwt/create/            |
-| 2. アカウント本登録   | api/auth/users/activation/                            |
-| 3. アカウント本登録再送信 | api/auth/users/resend_activation/                  |
-| 4. ログイン           | api/auth/jwt/create/                                  |
-| 5. リフレッシュトークン | api/auth/jwt/refresh/                               |
-| 6. 認証チェック       | api/auth/jwt/verify/                                  |
-| 7. ユーザー情報取得   | api/auth/users/me/                                    |
-| 8. ユーザー情報変更   | api/auth/users/me/                                    |
-| 9. ユーザーリスト取得 | api/auth/users/                                       |
-| 10. メールアドレス変更 | (Djoserのデフォルトでは提供されていない)               |
-| 11. メールアドレス変更確認 | (Djoserのデフォルトでは提供されていない)           |
-| 12. パスワード変更     | api/auth/users/set_password/                          |
-| 13. パスワードリセット | api/auth/users/reset_password/                        |
-| 14. パスワードリセット確認 | api/auth/users/reset_password_confirm/            |
-| 15. アカウント削除     | api/auth/users/{username}/                            |
-| 16. アカウント削除確認 | (Djoserのデフォルトでは提供されていない)               |
-
 api/auth/ ^users/$ [name='useraccount-list']
 api/auth/ ^users\.(?P<format>[a-z0-9]+)/?$ [name='useraccount-list']
 api/auth/ ^users/activation/$ [name='useraccount-activation']     ## {uid: uid, token:token}

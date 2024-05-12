@@ -1,0 +1,41 @@
+INFO 2023-12-12 13:49:18,659 autoreload Watching for file changes with StatReloader
+INFO 2023-12-13 12:52:15,842 autoreload Watching for file changes with StatReloader
+INFO 2023-12-13 12:53:02,865 autoreload Watching for file changes with StatReloader
+WARNING 2023-12-13 12:53:03,239 log Not Found: /
+WARNING 2023-12-13 12:53:03,239 basehttp "GET / HTTP/1.1" 404 12946
+INFO 2023-12-13 12:53:03,249 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-12-13 12:53:03,250 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-12-13 12:53:03,259 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-12-13 12:53:03,272 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2023-12-13 12:53:03,357 log Not Found: /favicon.ico
+WARNING 2023-12-13 12:53:03,357 basehttp "GET /favicon.ico HTTP/1.1" 404 13008
+INFO 2023-12-13 12:53:36,600 basehttp "GET /todo/login/ HTTP/1.1" 200 12065
+INFO 2023-12-13 12:53:41,398 basehttp "POST /todo/login/ HTTP/1.1" 200 12066
+INFO 2023-12-13 12:53:46,595 basehttp "GET /todo/tasks/about HTTP/1.1" 302 0
+WARNING 2023-12-13 12:53:46,646 log Not Found: /accounts/login/
+WARNING 2023-12-13 12:53:46,646 basehttp "GET /accounts/login/?next=/todo/tasks/about HTTP/1.1" 404 13070
+INFO 2023-12-13 12:53:50,243 basehttp "GET /todo/login/ HTTP/1.1" 200 12064
+INFO 2023-12-13 12:53:51,587 basehttp "GET /todo/tasks/ HTTP/1.1" 302 0
+WARNING 2023-12-13 12:53:51,639 log Not Found: /accounts/login/
+WARNING 2023-12-13 12:53:51,640 basehttp "GET /accounts/login/?next=/todo/tasks/ HTTP/1.1" 404 13060
+INFO 2023-12-13 12:54:01,171 basehttp "GET /todo/login/ HTTP/1.1" 200 12064
+INFO 2023-12-13 13:00:51,139 basehttp "POST /todo/login/ HTTP/1.1" 200 12066
+WARNING 2023-12-13 13:01:05,024 log Method Not Allowed: /api/login/
+WARNING 2023-12-13 13:01:05,025 basehttp "GET /api/login/ HTTP/1.1" 405 64
+WARNING 2023-12-13 13:01:14,527 log Unauthorized: /api/users/login/
+WARNING 2023-12-13 13:01:14,527 basehttp "GET /api/users/login/ HTTP/1.1" 401 19877
+WARNING 2023-12-13 13:01:26,207 log Unauthorized: /api/users/login/
+WARNING 2023-12-13 13:01:26,207 basehttp "GET /api/users/login/ HTTP/1.1" 401 19883
+WARNING 2023-12-13 13:01:30,443 log Unauthorized: /api/users/login/
+WARNING 2023-12-13 13:01:30,443 basehttp "GET /api/users/login/ HTTP/1.1" 401 19877
+INFO 2023-12-13 13:01:30,460 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2023-12-13 13:01:30,461 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2023-12-13 13:01:30,465 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2023-12-13 13:01:30,465 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2023-12-13 13:01:30,467 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2023-12-13 13:01:30,468 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2023-12-13 13:01:30,468 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2023-12-13 13:01:30,469 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2023-12-13 13:01:30,469 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2023-12-13 13:01:30,471 basehttp "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2023-12-13 13:01:30,482 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458

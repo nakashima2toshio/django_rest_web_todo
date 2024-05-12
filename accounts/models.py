@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.utils.translation import gettext_lazy as _
 
 
+# UserAccountManagerを作成
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
@@ -39,7 +40,8 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
         Group,
         verbose_name=_('groups'),
         blank=True,
-        help_text=_('The groups this user belongs to. A user will get all permissions granted to each of their groups.'),
+        help_text=_(
+            'The groups this user belongs to. A user will get all permissions granted to each of their groups.'),
         related_name="useraccount_groups",  # ここを変更
         related_query_name="useraccount",
     )
@@ -54,4 +56,3 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
-

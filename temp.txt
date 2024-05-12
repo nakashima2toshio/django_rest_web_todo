@@ -1,0 +1,234 @@
+.
+├── README.md
+├── accounts
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── email.py
+│   ├── fixtures
+│   │   └── howto.txt
+│   ├── migrations
+│   ├── models.py
+│   ├── serializers.py
+│   ├── templates
+│   │   └── accounts
+│   ├── tests
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   └── tests_email.py
+│   ├── urls.py
+│   └── views.py
+├── api
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   ├── models.cpython-311.pyc
+│   │   ├── serializers.cpython-311.pyc
+│   │   ├── urls.cpython-311.pyc
+│   │   └── views.cpython-311.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── fixtures
+│   │   └── customuser_fixtures.json
+│   ├── init_data
+│   │   ├── bash_init_data
+│   │   ├── custom_users.json
+│   │   └── profiles.json
+│   ├── management
+│   │   └── commands
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests
+│   │   ├── test_permissions.py
+│   │   ├── test_serializers.py
+│   │   └── test_views.py
+│   ├── urls.py
+│   └── views.py
+├── debug.log
+├── django_rest_web_todo
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── settings.cpython-311.pyc
+│   │   ├── urls.cpython-311.pyc
+│   │   └── wsgi.cpython-311.pyc
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── docker
+│   ├── docker-compose_staging.yml
+│   ├── mysql
+│   │   └── docker-compose.yml
+│   └── postgresql
+│       └── docker-compose.yml
+├── manage.py
+├── requirements.txt
+├── static
+│   ├── WiKi
+│   │   ├── 01-1_システム概要書.md
+│   │   ├── 01-2_基本設計書・目次.md
+│   │   ├── 01-3_ファイル構成.md
+│   │   ├── 01_基本設計書・目次.md
+│   │   ├── 02-1_詳細設計書・要件.md
+│   │   ├── 02_詳細設計書・要件.md
+│   │   ├── 03-2-1_詳細設計書（drf_api）.md
+│   │   ├── 03-2-2_クラス図.md
+│   │   ├── 03-2_ER図.md
+│   │   ├── 03_詳細設計書（drf_api）.md
+│   │   ├── 04-2-2_API設計書・一覧.md
+│   │   ├── 04_API設計書・一覧.md
+│   │   ├── 07-1_TestCase_sns_serializers.md
+│   │   ├── 07-2-2_TestCase_sns_views.md
+│   │   ├── D4-2_API_sns_app.md
+│   │   ├── D7-2-1_API_sns_serializers_テスト概要.md
+│   │   ├── D7-2-1_API_sns_tests.md
+│   │   ├── Fixtures_初期データ.md
+│   │   ├── accounts.svg
+│   │   └── er.txt
+│   ├── memo.txt
+│   └── migration.txt
+├── temp.txt
+├── templates
+├── todo_task
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── api_views.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   ├── forms.cpython-311.pyc
+│   │   ├── models.cpython-311.pyc
+│   │   ├── serializers.cpython-311.pyc
+│   │   ├── urls.cpython-311.pyc
+│   │   └── views.cpython-311.pyc
+│   ├── admin.py
+│   ├── api_views.py
+│   ├── apps.py
+│   ├── fixtures
+│   │   ├── howto.txt
+│   │   └── initial_data.json
+│   ├── forms.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── models.py
+│   ├── serializers.py
+│   ├── templates
+│   │   └── todo_task
+│   ├── urls.py
+│   └── views.py
+└── venv
+    ├── bin
+    │   ├── __pycache__
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── activate.nu
+    │   ├── activate.ps1
+    │   ├── activate_this.py
+    │   ├── beeline
+    │   ├── beeline.cmd
+    │   ├── deactivate.nu
+    │   ├── django-admin
+    │   ├── docker-image-tool.sh
+    │   ├── f2py
+    │   ├── find-spark-home
+    │   ├── find-spark-home.cmd
+    │   ├── find_spark_home.py
+    │   ├── fonttools
+    │   ├── gradio
+    │   ├── httpx
+    │   ├── huggingface-cli
+    │   ├── ipython
+    │   ├── ipython3
+    │   ├── jlpm
+    │   ├── jsonpointer
+    │   ├── jsonschema
+    │   ├── jupyter
+    │   ├── jupyter-console
+    │   ├── jupyter-dejavu
+    │   ├── jupyter-events
+    │   ├── jupyter-execute
+    │   ├── jupyter-kernel
+    │   ├── jupyter-kernelspec
+    │   ├── jupyter-lab
+    │   ├── jupyter-labextension
+    │   ├── jupyter-labhub
+    │   ├── jupyter-migrate
+    │   ├── jupyter-nbconvert
+    │   ├── jupyter-notebook
+    │   ├── jupyter-qtconsole
+    │   ├── jupyter-run
+    │   ├── jupyter-server
+    │   ├── jupyter-troubleshoot
+    │   ├── jupyter-trust
+    │   ├── load-spark-env.cmd
+    │   ├── load-spark-env.sh
+    │   ├── markdown-it
+    │   ├── normalizer
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.11
+    │   ├── pybabel
+    │   ├── pyftmerge
+    │   ├── pyftsubset
+    │   ├── pygmentize
+    │   ├── pyjson5
+    │   ├── pyspark
+    │   ├── pyspark.cmd
+    │   ├── pyspark2.cmd
+    │   ├── python -> /opt/homebrew/opt/python@3.11/bin/python3.11
+    │   ├── python3 -> python
+    │   ├── python3.11 -> python
+    │   ├── qtpy
+    │   ├── run-example
+    │   ├── run-example.cmd
+    │   ├── send2trash
+    │   ├── spark-class
+    │   ├── spark-class.cmd
+    │   ├── spark-class2.cmd
+    │   ├── spark-connect-shell
+    │   ├── spark-shell
+    │   ├── spark-shell.cmd
+    │   ├── spark-shell2.cmd
+    │   ├── spark-sql
+    │   ├── spark-sql.cmd
+    │   ├── spark-sql2.cmd
+    │   ├── spark-submit
+    │   ├── spark-submit.cmd
+    │   ├── spark-submit2.cmd
+    │   ├── sparkR
+    │   ├── sparkR.cmd
+    │   ├── sparkR2.cmd
+    │   ├── sqlformat
+    │   ├── tqdm
+    │   ├── ttx
+    │   ├── upload_theme
+    │   ├── uvicorn
+    │   ├── wheel
+    │   ├── wheel-3.11
+    │   ├── wheel3
+    │   ├── wheel3.11
+    │   └── wsdump
+    ├── etc
+    │   └── jupyter
+    ├── lib
+    │   └── python3.11
+    ├── pyvenv.cfg
+    └── share
+        ├── applications
+        ├── icons
+        ├── jupyter
+        ├── man
+        └── py4j
+
+48 directories, 194 files

@@ -1,12 +1,12 @@
 [
   {
     "model": "api.customuser",
-    "pk": 1,
+    "pk": 3,
     "fields": {
-      "username": "admin",
-      "email": "admin@example.com",
-      "first_name": "Admin",
-      "last_name": "User",
+      "username": "taro",
+      "email": "taro@example.com",
+      "first_name": "Taro",
+      "last_name": "Yamada",
       "is_active": true,
       "is_staff": true,
       "is_superuser": true
@@ -14,7 +14,7 @@
   },
   {
     "model": "api.customuser",
-    "pk": 2,
+    "pk": 4,
     "fields": {
       "username": "tom",
       "email": "tom@example.com",
@@ -27,7 +27,7 @@
   },
   {
     "model": "api.customuser",
-    "pk": 3,
+    "pk": 5,
     "fields": {
       "username": "alice",
       "email": "alice@example.com",
@@ -40,7 +40,7 @@
   },
   {
     "model": "api.customuser",
-    "pk": 4,
+    "pk": 6,
     "fields": {
       "username": "bob",
       "email": "bob@example.com",

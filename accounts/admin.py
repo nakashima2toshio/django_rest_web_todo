@@ -50,4 +50,4 @@ class UserAdminCustom(UserAdmin):
     ordering = ('id',)
 
 
-# admin.site.register(User, UserAdminCustom)
+admin.site.register(User, UserAdminCustom)
